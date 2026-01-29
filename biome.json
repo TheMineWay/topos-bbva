@@ -3,5 +3,8 @@
 		"domains": {
 			"react": "recommended"
 		}
+	},
+	"organizeImports": {
+		"enabled": false
 	}
 }
