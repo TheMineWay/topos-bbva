@@ -1,13 +1,12 @@
-
 import { useNavigate } from "@tanstack/react-router";
 import { useEffect } from "react";
 
 export const NotFound: FC = () => {
-    const navigate = useNavigate();
+	const navigate = useNavigate();
 
-    useEffect(() => {
-        navigate({ to: "/" });
-    }, [navigate]);
+	useEffect(() => {
+		navigate({ to: "/" });
+	}, [navigate]);
 
-    return null;
+	return null;
 };
