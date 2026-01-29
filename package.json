@@ -1,37 +1,37 @@
 {
-  "name": "topos-bbva",
-  "description": "Juego de topos",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module",
-  "author": {
-    "name": "Joel Campos Oliva",
-    "url": "https://github.com/TheMineWay"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/TheMineWay/topos-bbva"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "biome format --write",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.3.13",
-    "@eslint/js": "^9.39.1",
-    "@types/node": "^24.10.1",
-    "@types/react": "^19.2.5",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.1",
-    "babel-plugin-react-compiler": "^1.0.0",
-    "globals": "^16.5.0",
-    "typescript": "~5.9.3",
-    "vite": "^7.2.4"
-  }
+	"name": "topos-bbva",
+	"description": "Juego de topos",
+	"private": true,
+	"version": "1.0.0",
+	"type": "module",
+	"author": {
+		"name": "Joel Campos Oliva",
+		"url": "https://github.com/TheMineWay"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TheMineWay/topos-bbva"
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"lint": "biome format --write",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"react": "^19.2.0",
+		"react-dom": "^19.2.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.3.13",
+		"@eslint/js": "^9.39.1",
+		"@types/node": "^24.10.1",
+		"@types/react": "^19.2.5",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react": "^5.1.1",
+		"babel-plugin-react-compiler": "^1.0.0",
+		"globals": "^16.5.0",
+		"typescript": "~5.9.3",
+		"vite": "^7.2.4"
+	}
 }

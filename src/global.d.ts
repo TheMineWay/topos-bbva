@@ -2,5 +2,5 @@
 import type React from "react";
 
 declare global {
-  type FC<P = object> = React.FC<P>;
+	type FC<P = object> = React.FC<P>;
 }

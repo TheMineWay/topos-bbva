@@ -1,3 +1,3 @@
 export const App: FC = () => {
-    return <></>;
-}
+	return <></>;
+};
