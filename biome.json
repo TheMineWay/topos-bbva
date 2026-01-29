@@ -1,7 +1,7 @@
 {
-	"linter": {
-		"domains": {
-			"react": "recommended"
-		}
-	}
+    "linter": {
+        "domains": {
+            "react": "recommended"
+        }
+    }
 }
