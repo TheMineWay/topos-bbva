@@ -19,6 +19,7 @@ export default defineConfig(({ mode }) => {
 				"@common": resolve(__dirname, "src/common"),
 				"@features": resolve(__dirname, "src/features"),
 				"@layouts": resolve(__dirname, "src/layouts"),
+				"@providers": resolve(__dirname, "src/providers"),
 				"@i18n": resolve(__dirname, "src/i18n"),
 			},
 		},

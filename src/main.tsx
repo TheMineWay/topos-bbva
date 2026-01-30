@@ -9,7 +9,7 @@ import "./i18n/i18n";
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
 import { NotFound } from "@common/not-found/components/not-found";
-import { MantineProvider } from "@mantine/core";
+import { ThemeProvider } from "@providers/theme/theme.provider";
 
 // Create a new router instance
 const router = createRouter({
@@ -26,8 +26,8 @@ declare module "@tanstack/react-router" {
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
-		<MantineProvider>
+		<ThemeProvider>
 			<RouterProvider router={router} />
-		</MantineProvider>
+		</ThemeProvider>
 	</StrictMode>,
 );
