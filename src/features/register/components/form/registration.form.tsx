@@ -1,6 +1,6 @@
 import { Button, Input } from "@mantine/core";
 import { IconLogin2 } from "@tabler/icons-react";
-import { Controller, Form, type UseFormReturn } from "react-hook-form";
+import { Controller, useFormState, type UseFormReturn } from "react-hook-form";
 import z from "zod";
 
 const MIN_USERNAME_LENGTH = 2;
@@ -17,13 +17,15 @@ type Props = {
 };
 
 export const RegistrationForm: FC<Props> = ({ form: { control, handleSubmit }, onSuccess }) => {
-    return <Form control={control} onSubmit={handleSubmit(onSuccess)}>
+    const formState = useFormState({ control});
+
+    return <form onSubmit={handleSubmit(onSuccess)}>
         <Controller control={control} name="username" render={({ field }) => (
             <Input.Wrapper label="Username" required>
-                <Input minLength={MIN_USERNAME_LENGTH} maxLength={MAX_USERNAME_LENGTH} {...field}/>
+                <Input minLength={MIN_USERNAME_LENGTH} maxLength={MAX_USERNAME_LENGTH} {...field} value={field.value ?? ''}/>
             </Input.Wrapper>
         )}/>
 
-        <Button leftSection={<IconLogin2/>} type="submit" fullWidth>Register</Button>
-    </Form>
+        <Button leftSection={<IconLogin2/>} type="submit" fullWidth disabled={!formState.isValid}>Register</Button>
+    </form>
 }

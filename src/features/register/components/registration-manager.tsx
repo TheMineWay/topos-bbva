@@ -6,7 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 export const RegistrationManager: FC = () => {
     const form = useForm<RegistrationFormValues>({
-        resolver: zodResolver(REGISTRATION_FORM_SCHEMA)
+        resolver: zodResolver(REGISTRATION_FORM_SCHEMA),
+        reValidateMode: 'onChange'
     });
 
     return <Paper shadow="md" p="lg" className={styles.root}>
