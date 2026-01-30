@@ -20,17 +20,17 @@ export default defineConfig((configEnv) =>
 					},
 				},
 				// DOM tests
-				// {
-				// 	test: {
-				// 		include: ["**/*.spec.dom.{ts,tsx}"],
-				// 		name: "browser",
-				// 		browser: {
-				// 			enabled: true,
-				// 			provider: playwright(),
-				// 			instances: [{ browser: "chromium" }],
-				// 		},
-				// 	},
-				// },
+				{
+					test: {
+						include: ["**/*.spec.dom.{ts,tsx}"],
+						name: "browser",
+						browser: {
+							enabled: true,
+							provider: playwright(),
+							instances: [{ browser: "chromium" }],
+						},
+					},
+				},
 			],
 		},
 	}),
