@@ -6,7 +6,9 @@ export const Route = createFileRoute("/")({
 });
 
 function RouteComponent() {
-	return <div className="full-center">
-		<RegistrationManager/>
-	</div>;
+	return (
+		<div className="full-center">
+			<RegistrationManager />
+		</div>
+	);
 }

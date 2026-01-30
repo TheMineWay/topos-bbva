@@ -7,8 +7,8 @@ import register_en from "./locales/en/register.json";
 import game_en from "./locales/en/game.json";
 
 export const LOCALE_TRANSLATIONS = {
-    [LANGUAGES.EN]: {
-        [TRANSLATIONS.REGISTER]: register_en,
-        [TRANSLATIONS.GAME]: game_en,
-    }
-}
+	[LANGUAGES.EN]: {
+		[TRANSLATIONS.REGISTER]: register_en,
+		[TRANSLATIONS.GAME]: game_en,
+	},
+};

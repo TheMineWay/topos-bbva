@@ -1,11 +1,11 @@
 {
-    "Title": "Register player",
-    "form": {
-        "fields": {
-            "username": {
-                "Label": "Username"
-            }
-        },
-        "Submit": "Register"
-    }
+	"Title": "Register player",
+	"form": {
+		"fields": {
+			"username": {
+				"Label": "Username"
+			}
+		},
+		"Submit": "Register"
+	}
 }
