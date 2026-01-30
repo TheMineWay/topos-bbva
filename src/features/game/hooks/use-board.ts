@@ -3,7 +3,7 @@ import { useScore } from "./use-score";
 import { useGameTimer } from "./use-game-timer";
 
 type Options = {
-	initialSize?: [number, number];
+	initialSize?: number;
 	initialTimerDelay?: number;
 };
 
@@ -11,7 +11,7 @@ type Options = {
  * Hook responsible of managing board and game logics
  */
 export const useBoard = ({
-	initialSize = [3, 3],
+	initialSize = 9,
 	initialTimerDelay,
 }: Options = {}) => {
 	const scoreManager = useScore();
