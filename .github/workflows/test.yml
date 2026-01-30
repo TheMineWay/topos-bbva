@@ -31,6 +31,9 @@ jobs:
           npm install -g pnpm
           pnpm install
 
+      - name: 🎥 Install Playwright
+        run: pnpm add -g playwright
+
       - name: 🧩 Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
 
