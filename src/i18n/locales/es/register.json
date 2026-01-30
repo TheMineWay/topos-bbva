@@ -1,0 +1,11 @@
+{
+	"Title": "Registrar jugador",
+	"form": {
+		"fields": {
+			"username": {
+				"Label": "Nombre de usuario"
+			}
+		},
+		"Submit": "Registrar"
+	}
+}

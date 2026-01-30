@@ -34,7 +34,7 @@ const LanguageOptions: FC = () => {
 		<LanguageOption
 			key={key}
 			language={value}
-			isSelected
+			isSelected={i18n.language === value}
 			t={t}
 			onClick={() => i18n.changeLanguage(value)}
 		/>

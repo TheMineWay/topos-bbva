@@ -2,6 +2,7 @@
 
 export const LANGUAGES = {
 	EN: "en",
+	ES: "es",
 };
 
 export type Language = keyof typeof LANGUAGES;
