@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import { useScore } from "./use-score";
 import { useGameTimer } from "./use-game-timer";
+import type { Hole } from "../types/hole.type";
 
 type Options = {
 	initialSize?: number;
@@ -15,6 +16,12 @@ export const useBoard = ({
 	initialTimerDelay,
 }: Options = {}) => {
 	const scoreManager = useScore();
+
+	// #region Moles
+
+	const [moles, setMoles] = useState<Hole[]>([]);
+
+	// #endregion
 
 	// #region Board
 
@@ -54,6 +61,10 @@ export const useBoard = ({
 		// Timer API
 		timerTickDelay,
 		setTimerTickDelay,
+
+		// Moles API
+		moles,
+		setMoles,
 	};
 };
 
