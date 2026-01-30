@@ -1,10 +1,15 @@
 {
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"linter": {
 		"domains": {
 			"react": "recommended"
 		}
 	},
-	"organizeImports": {
-		"enabled": false
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "off"
+			}
+		}
 	}
 }
