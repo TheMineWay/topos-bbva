@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { E2E_CONSTANTS } from "../../e2e.constants";
+import { analyzeA11y, forEveryTheme } from "../../utils";
 
 test.describe("Session flow", () => {
 	test("Register new user", async ({ page }) => {
@@ -26,5 +27,13 @@ test.describe("Session flow", () => {
 		// Go back to home to check session persistence
 		await page.goto(E2E_CONSTANTS.BASE_URL);
 		await page.waitForURL(`${E2E_CONSTANTS.BASE_URL}/game`);
+	});
+
+	test("Should be accessible", async ({ page }) => {
+		await page.goto(E2E_CONSTANTS.BASE_URL);
+		await page.waitForLoadState("networkidle");
+		expect(page.url()).toBe(E2E_CONSTANTS.BASE_URL + "/");
+
+		await forEveryTheme(page, analyzeA11y);
 	});
 });

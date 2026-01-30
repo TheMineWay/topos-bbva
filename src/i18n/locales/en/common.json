@@ -1,10 +1,19 @@
 {
-	"languages": {
-		"en": {
-			"Name": "English"
-		},
-		"es": {
-			"Name": "Spanish"
+	"language": {
+		"Select": "Select language",
+		"languages": {
+			"en": {
+				"Name": "English"
+			},
+			"es": {
+				"Name": "Spanish"
+			}
+		}
+	},
+	"theme": {
+		"switcher": {
+			"light": "Switch to light mode",
+			"dark": "Switch to dark mode"
 		}
 	}
 }
