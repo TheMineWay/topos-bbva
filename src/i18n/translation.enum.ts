@@ -1,6 +1,7 @@
 // Not really an enum, I just discovered React compiler cannot use enums D:
 
 export const TRANSLATIONS = {
+	COMMON: "common",
 	REGISTER: "register",
 	GAME: "game",
 };
