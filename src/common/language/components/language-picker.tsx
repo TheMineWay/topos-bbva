@@ -6,10 +6,12 @@ import type { TFunction } from "i18next";
 import { useTranslation } from "react-i18next";
 
 export const LanguagePicker: FC = () => {
+	const { t } = useTranslation(TRANSLATIONS.COMMON);
+
 	return (
 		<Menu>
 			<Menu.Target>
-				<ActionIcon>
+				<ActionIcon aria-label={t("language.Select")}>
 					<IconLanguage />
 				</ActionIcon>
 			</Menu.Target>
@@ -59,7 +61,7 @@ const LanguageOption: FC<LanguageOptionProps> = ({
 			leftSection={isSelected && <IconCheck />}
 			onClick={() => onClick()}
 		>
-			{t(`languages.${language}.Name`)}
+			{t(`language.languages.${language}.Name`)}
 		</Menu.Item>
 	);
 };
