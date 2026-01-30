@@ -1,6 +1,6 @@
 import { Button, Input } from "@mantine/core";
 import { IconLogin2 } from "@tabler/icons-react";
-import { TRANSLATIONS } from "@i18n/translation.enum";
+import { TRANSLATIONS } from "../../../../i18n/translation.enum";
 import { Controller, useFormState, type UseFormReturn } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import z from "zod";
@@ -37,6 +37,7 @@ export const RegistrationForm: FC<Props> = ({
 							maxLength={MAX_USERNAME_LENGTH}
 							{...field}
 							value={field.value ?? ""}
+							data-testid="register-username"
 						/>
 					</Input.Wrapper>
 				)}
@@ -47,6 +48,7 @@ export const RegistrationForm: FC<Props> = ({
 				type="submit"
 				fullWidth
 				disabled={!formState.isValid}
+				data-testid="register-submit"
 			>
 				{t("form.Submit")}
 			</Button>

@@ -4,7 +4,7 @@ import {
 	clearStoredUser,
 	getStoredUser,
 	setStoredUser,
-} from "@features/register/lib/stored-user";
+} from "../../features/register/lib/stored-user";
 
 type Props = {
 	children: React.ReactNode;

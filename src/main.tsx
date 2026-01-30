@@ -8,9 +8,9 @@ import "./i18n/i18n";
 
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
-import { NotFound } from "@common/not-found/components/not-found";
-import { ThemeProvider } from "@providers/theme/theme.provider";
-import { UserProvider } from "@providers/user/user.provider";
+import { UserProvider } from "./providers/user/user.provider";
+import { ThemeProvider } from "./providers/theme/theme.provider";
+import { NotFound } from "./common/not-found/components/not-found";
 
 // Create a new router instance
 const router = createRouter({
