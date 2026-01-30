@@ -37,6 +37,7 @@ export const RegistrationForm: FC<Props> = ({
 							maxLength={MAX_USERNAME_LENGTH}
 							{...field}
 							value={field.value ?? ""}
+							data-testid="register-username"
 						/>
 					</Input.Wrapper>
 				)}
@@ -47,6 +48,7 @@ export const RegistrationForm: FC<Props> = ({
 				type="submit"
 				fullWidth
 				disabled={!formState.isValid}
+				data-testid="register-submit"
 			>
 				{t("form.Submit")}
 			</Button>
