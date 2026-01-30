@@ -16,7 +16,9 @@
 		"dev": "vite",
 		"build": "tsc -b && vite build",
 		"lint": "biome format --write",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"test": "vitest",
+		"test:dev": "vitest --watch"
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^5.2.2",
