@@ -32,6 +32,10 @@ export default defineConfig({
 		trace: "on-first-retry",
 	},
 
+	/**
+	 * All browsers enabled. THis game is not going to fail in any device 😎
+	 */
+
 	/* Configure projects for major browsers */
 	projects: [
 		{
