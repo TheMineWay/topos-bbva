@@ -4,6 +4,7 @@ import { createRoot } from "react-dom/client";
 import "./styles/index.css";
 import "./styles/reset.css";
 import "@mantine/core/styles.css";
+import './i18n/i18n';
 
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";

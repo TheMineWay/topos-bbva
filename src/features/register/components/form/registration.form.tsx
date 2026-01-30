@@ -1,6 +1,8 @@
 import { Button, Input } from "@mantine/core";
 import { IconLogin2 } from "@tabler/icons-react";
+import { TRANSLATIONS } from "@i18n/translation.enum";
 import { Controller, useFormState, type UseFormReturn } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import z from "zod";
 
 const MIN_USERNAME_LENGTH = 2;
@@ -17,15 +19,16 @@ type Props = {
 };
 
 export const RegistrationForm: FC<Props> = ({ form: { control, handleSubmit }, onSuccess }) => {
-    const formState = useFormState({ control});
+    const { t } = useTranslation([TRANSLATIONS.REGISTER]);
+    const formState = useFormState({ control });
 
     return <form onSubmit={handleSubmit(onSuccess)}>
         <Controller control={control} name="username" render={({ field }) => (
-            <Input.Wrapper label="Username" required>
+            <Input.Wrapper label={t('form.fields.username.Label')} required>
                 <Input minLength={MIN_USERNAME_LENGTH} maxLength={MAX_USERNAME_LENGTH} {...field} value={field.value ?? ''}/>
             </Input.Wrapper>
         )}/>
 
-        <Button leftSection={<IconLogin2/>} type="submit" fullWidth disabled={!formState.isValid}>Register</Button>
+        <Button leftSection={<IconLogin2/>} type="submit" fullWidth disabled={!formState.isValid}>{t('form.Submit')}</Button>
     </form>
 }
