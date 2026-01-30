@@ -10,6 +10,7 @@ import "./i18n/i18n";
 import { routeTree } from "./routeTree.gen";
 import { NotFound } from "@common/not-found/components/not-found";
 import { ThemeProvider } from "@providers/theme/theme.provider";
+import { UserProvider } from "@providers/user/user.provider";
 
 // Create a new router instance
 const router = createRouter({
@@ -26,8 +27,10 @@ declare module "@tanstack/react-router" {
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
-		<ThemeProvider>
-			<RouterProvider router={router} />
-		</ThemeProvider>
+		<UserProvider>
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		</UserProvider>
 	</StrictMode>,
 );
