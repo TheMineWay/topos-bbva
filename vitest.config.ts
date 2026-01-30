@@ -14,7 +14,7 @@ export default defineConfig((configEnv) =>
 				// Unit tests
 				{
 					test: {
-						include: ["**/*.spec.ts"],
+						include: ["src/**/*.spec.ts"],
 						name: "unit",
 						environment: "node",
 					},
@@ -22,7 +22,7 @@ export default defineConfig((configEnv) =>
 				// DOM tests
 				{
 					test: {
-						include: ["**/*.spec.dom.{ts,tsx}"],
+						include: ["src/**/*.spec.dom.{ts,tsx}"],
 						name: "browser",
 						browser: {
 							enabled: true,
