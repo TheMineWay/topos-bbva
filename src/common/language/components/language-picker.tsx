@@ -1,5 +1,5 @@
-import { LANGUAGES } from "@i18n/language.enum";
-import { TRANSLATIONS } from "@i18n/translation.enum";
+import { LANGUAGES } from "../../../i18n/language.enum";
+import { TRANSLATIONS } from "../../../i18n/translation.enum";
 import { ActionIcon, Menu } from "@mantine/core";
 import { IconCheck, IconLanguage } from "@tabler/icons-react";
 import type { TFunction } from "i18next";

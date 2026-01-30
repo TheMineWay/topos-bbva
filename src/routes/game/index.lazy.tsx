@@ -1,4 +1,4 @@
-import { useSessionRedirect } from "@common/session/hooks/use-session-redirect";
+import { useSessionRedirect } from "../../common/session/hooks/use-session-redirect";
 import { createLazyFileRoute } from "@tanstack/react-router";
 
 export const Route = createLazyFileRoute("/game/")({

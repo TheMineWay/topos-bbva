@@ -1,6 +1,6 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 import { getStoredUser } from "./stored-user";
-import type { UserInfo } from "@providers/user/user.context";
+import type { UserInfo } from "providers/user/user.context";
 
 const localStorageMock = (() => {
 	let store: Record<string, string> = {};

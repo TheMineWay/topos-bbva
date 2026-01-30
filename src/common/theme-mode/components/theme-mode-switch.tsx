@@ -1,5 +1,5 @@
 import { ActionIcon } from "@mantine/core";
-import { useThemeContext } from "@providers/theme/theme.context";
+import { useThemeContext } from "../../../providers/theme/theme.context";
 import { IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
 import { useCallback } from "react";
 
