@@ -4,6 +4,7 @@ import type { Mole } from "../types/mole.type";
 import { randomizeHoles } from "./randomize-holes.util";
 
 type Scenario = {
+	name: string;
 	availableHolesCount?: number; // 9
 	amount?: number; // 1
 	randomValues: number[];
@@ -16,7 +17,8 @@ const DEF_MOLE: Mole = {
 
 const SCENARIOS: Scenario[] = [
 	{
-		randomValues: [],
+		name: "single hole selection at start",
+		randomValues: [0],
 		expectedHoles: [
 			{
 				number: 0,
@@ -24,17 +26,66 @@ const SCENARIOS: Scenario[] = [
 			},
 		],
 	},
+	{
+		name: "single hole selection in the middle",
+		randomValues: [3],
+		expectedHoles: [
+			{
+				number: 3,
+				mole: DEF_MOLE,
+			},
+		],
+	},
+	{
+		name: "multiple hole selection",
+		amount: 3,
+		randomValues: [2, 0, 2],
+		expectedHoles: [
+			{
+				number: 2,
+				mole: DEF_MOLE,
+			},
+			{
+				number: 0,
+				mole: DEF_MOLE,
+			},
+			{
+				number: 4,
+				mole: DEF_MOLE,
+			},
+		],
+	},
+	{
+		name: "requesting more holes than available",
+		amount: 3,
+		availableHolesCount: 2,
+		randomValues: [0, 0],
+		expectedHoles: [
+			{
+				number: 0,
+				mole: DEF_MOLE,
+			},
+			{
+				number: 1,
+				mole: DEF_MOLE,
+			},
+		],
+	},
 ];
 
+let randomReturnValues: number[] = [];
+
 vi.mock("../../../common/random/lib/get-random-int.util", () => ({
-	getRandomInt: () => 0,
+	getRandomInt: () => {
+		return randomReturnValues.shift();
+	},
 }));
 
 describe("randomizeHoles()", () => {
-	describe("should return randomized list of holes", () => {
-		it.each(
-			SCENARIOS.map((scenario, idx) => ({ scenario, idx: idx.toString() })),
-		)("in scenario $idx", ({ scenario }) => {
+	describe("should return randomized list of holes when", () => {
+		it.each(SCENARIOS)("$name", (scenario) => {
+			randomReturnValues = [...scenario.randomValues];
+
 			// Test each scenario
 			const { availableHolesCount = 9, amount = 1 } = scenario;
 
