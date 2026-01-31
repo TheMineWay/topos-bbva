@@ -12,6 +12,7 @@ const OPTIONS = Object.entries(GAME_DIFFICULTY_CONFIG).map(([mode, value]) => ({
 }));
 export const GameDifficultySelector: FC = () => {
 	const { t } = useTranslation(TRANSLATIONS.GAME);
+
 	const {
 		config: { difficulty },
 		setConfig,
@@ -39,6 +40,12 @@ export const GameDifficultySelector: FC = () => {
 	);
 
 	return (
-		<Select w="10rem" data={options} value={difficulty} onChange={onSelect} />
+		<Select
+			w="10rem"
+			data={options}
+			value={difficulty}
+			onChange={onSelect}
+			aria-label={t("config.difficulty.Select")}
+		/>
 	);
 };

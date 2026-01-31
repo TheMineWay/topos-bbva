@@ -19,7 +19,8 @@
 				"easy": "Easy",
 				"medium": "Medium",
 				"hard": "Hard"
-			}
+			},
+			"Select": "Select difficulty"
 		},
 		"moles-amount": {
 			"actions": {
