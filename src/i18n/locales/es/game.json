@@ -12,8 +12,7 @@
 	},
 	"layout": {
 		"Greeting": "¡Hola {{name}}!"
-	}
-,
+	},
 	"config": {
 		"difficulty": {
 			"options": {
