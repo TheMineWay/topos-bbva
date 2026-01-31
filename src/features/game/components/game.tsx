@@ -5,11 +5,11 @@ import { useTranslation } from "react-i18next";
 import { TRANSLATIONS } from "../../../i18n/translation.enum";
 import { useCallback } from "react";
 import styles from "./game.module.css";
-import { Score } from "./score/score";
 import {
 	IconPlayerPlayFilled,
 	IconPlayerStopFilled,
 } from "@tabler/icons-react";
+import { Score } from "../../../common/score/components/score";
 
 export const Game: FC = () => {
 	const { t } = useTranslation(TRANSLATIONS.GAME);

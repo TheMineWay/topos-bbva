@@ -1,7 +1,7 @@
 import { Indicator, Title } from "@mantine/core";
-import type { UseScore } from "../../hooks/use-score";
 import { useTranslation } from "react-i18next";
-import { TRANSLATIONS } from "../../../../i18n/translation.enum";
+import { TRANSLATIONS } from "../../../i18n/translation.enum";
+import type { UseScore } from "../hooks/use-score";
 
 type Props = {
 	manager: UseScore;

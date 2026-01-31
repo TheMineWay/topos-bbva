@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
-import { useScore } from "./use-score";
+import { useScore } from "../../../common/score/hooks/use-score";
 import { useGameTimer } from "./use-game-timer";
 import type { Hole } from "../types/hole.type";
 import { GAME_CONSTANTS } from "../constants/game.constants";

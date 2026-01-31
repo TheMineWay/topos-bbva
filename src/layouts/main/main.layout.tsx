@@ -17,6 +17,7 @@ export const MainLayout: FC<Props> = ({ children }) => {
 					<LanguagePicker />
 				</Flex>
 			</Affix>
+			<Affix p="lg" position={{ bottom: 20, left: 20 }}></Affix>
 		</>
 	);
 };
