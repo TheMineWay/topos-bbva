@@ -1,10 +1,11 @@
-import { Button, Title } from "@mantine/core";
+import { Button } from "@mantine/core";
 import { useBoard } from "../hooks/use-board";
 import { Board } from "./board";
 import { useTranslation } from "react-i18next";
 import { TRANSLATIONS } from "../../../i18n/translation.enum";
 import { useCallback } from "react";
 import styles from "./game.module.css";
+import { Score } from "./score/score";
 
 export const Game: FC = () => {
 	const { t } = useTranslation(TRANSLATIONS.GAME);
@@ -17,7 +18,7 @@ export const Game: FC = () => {
 
 	return (
 		<div className={styles.root}>
-			<Title>{t("score.Points", { score: manager.scoreManager.score })}</Title>
+			<Score manager={manager.scoreManager} />
 
 			<Board manager={manager} />
 

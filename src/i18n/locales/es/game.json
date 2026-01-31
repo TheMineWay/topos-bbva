@@ -7,6 +7,7 @@
 		"Mole": "Topo"
 	},
 	"score": {
-		"Points": "{{score}} puntos"
+		"Points": "{{score}} puntos",
+		"New-record": "¡Mejor puntuación!"
 	}
 }

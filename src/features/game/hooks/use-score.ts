@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
-import { setBestScore } from "../lib/score.utils";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { getBestScore, setBestScore } from "../lib/score.utils";
 
 type Options = {
 	username: string;
@@ -7,6 +7,7 @@ type Options = {
 
 export const useScore = ({ username }: Options) => {
 	const [score, setScore] = useState(0);
+	const [lastBestScore, setLastBestScore] = useState(() => getBestScore());
 
 	useEffect(() => setBestScore(score, username), [score, username]);
 
@@ -15,7 +16,15 @@ export const useScore = ({ username }: Options) => {
 		[],
 	);
 
-	const reset = useCallback(() => setScore(0), []);
+	const reset = useCallback(() => {
+		setScore(0);
+		setLastBestScore(() => getBestScore());
+	}, []);
+
+	const isBestScore = useMemo(() => {
+		const bestScore = lastBestScore?.bestScore ?? 0;
+		return score > bestScore;
+	}, [score, lastBestScore]);
 
 	return {
 		score,
@@ -24,6 +33,7 @@ export const useScore = ({ username }: Options) => {
 		// API
 		increment,
 		reset,
+		isBestScore,
 	};
 };
 
