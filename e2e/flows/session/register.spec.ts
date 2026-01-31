@@ -7,7 +7,7 @@ test.describe("Session flow", () => {
 		const DEMO_USERNAME = "Yoshi";
 
 		await page.goto(E2E_CONSTANTS.BASE_URL);
-		expect(page.url()).toBe(E2E_CONSTANTS.BASE_URL + "/");
+		await expect(page).toHaveURL(E2E_CONSTANTS.BASE_URL + "/");
 
 		const usernameField = page.getByTestId("register-username");
 		const registerButton = page.getByTestId("register-submit");
@@ -22,7 +22,7 @@ test.describe("Session flow", () => {
 		});
 
 		expect(lsData).toBe(JSON.stringify({ username: DEMO_USERNAME }));
-		expect(page.url()).toBe(`${E2E_CONSTANTS.BASE_URL}/game`);
+		await expect(page).toHaveURL(`${E2E_CONSTANTS.BASE_URL}/game`);
 
 		// Go back to home to check session persistence
 		await page.goto(E2E_CONSTANTS.BASE_URL);
@@ -32,7 +32,7 @@ test.describe("Session flow", () => {
 	test("Should be accessible", async ({ page }) => {
 		await page.goto(E2E_CONSTANTS.BASE_URL);
 		await page.waitForLoadState("networkidle");
-		expect(page.url()).toBe(E2E_CONSTANTS.BASE_URL + "/");
+		await expect(page).toHaveURL(E2E_CONSTANTS.BASE_URL + "/");
 
 		await forEveryTheme(page, analyzeA11y);
 	});
