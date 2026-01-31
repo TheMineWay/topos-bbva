@@ -64,15 +64,27 @@ export const useBoard = ({
 
 	const [isPlaying, setIsPlaying] = useState(false);
 
-	const play = useCallback(() => setIsPlaying(true), []);
-	const stop = useCallback(() => setIsPlaying(false), []);
+	const play = useCallback(() => {
+		setIsPlaying(true);
+		nextHoles();
+	}, [nextHoles]);
+
+	const stop = useCallback(() => {
+		setIsPlaying(false);
+		setHoles([]);
+		scoreManager.reset();
+	}, [scoreManager]);
 
 	// #endregion
 
 	// #region Timer
 
 	const [timerTickDelay, setTimerTickDelay] = useState(initialTimerDelay);
-	useGameTimer({ tickDelay: timerTickDelay, onTick: nextHoles });
+	useGameTimer({
+		tickDelay: timerTickDelay,
+		onTick: nextHoles,
+		enabled: isPlaying,
+	});
 
 	// #endregion
 

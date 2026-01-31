@@ -8,12 +8,15 @@ export const useScore = () => {
 		[],
 	);
 
+	const reset = useCallback(() => setScore(0), []);
+
 	return {
 		score,
 		setScore,
 
 		// API
 		increment,
+		reset,
 	};
 };
 

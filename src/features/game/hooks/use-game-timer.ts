@@ -6,12 +6,19 @@ const INTERVAL = 50;
 type Options = {
 	tickDelay?: number; // In milliseconds
 	onTick?: CallableFunction;
+	enabled?: boolean;
 };
 
-export const useGameTimer = ({ tickDelay = 1000, onTick }: Options = {}) => {
+export const useGameTimer = ({
+	tickDelay = 1000,
+	onTick,
+	enabled = true,
+}: Options = {}) => {
 	const [lastCountStart, setLastCountStart] = useState<Date>(new Date());
 
 	useEffect(() => {
+		if (!enabled) return;
+
 		const unsubscribe = setInterval(() => {
 			const now = new Date();
 			const targetTime = addMilliseconds(lastCountStart, tickDelay);
@@ -21,7 +28,11 @@ export const useGameTimer = ({ tickDelay = 1000, onTick }: Options = {}) => {
 			}
 		}, INTERVAL);
 		return () => clearInterval(unsubscribe);
-	}, [onTick, lastCountStart, tickDelay]);
+	}, [onTick, lastCountStart, tickDelay, enabled]);
+
+	useEffect(() => {
+		if (enabled) setLastCountStart(new Date());
+	}, [enabled]);
 };
 
 /**
