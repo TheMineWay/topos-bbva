@@ -12,5 +12,14 @@
 	},
 	"layout": {
 		"Greeting": "Hi {{name}}!"
+	},
+	"config": {
+		"difficulty": {
+			"options": {
+				"easy": "Easy",
+				"medium": "Medium",
+				"hard": "Hard"
+			}
+		}
 	}
 }
