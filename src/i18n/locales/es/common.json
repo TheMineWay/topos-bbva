@@ -1,10 +1,15 @@
 {
-	"languages": {
-		"en": {
-			"Name": "Inglés"
-		},
-		"es": {
-			"Name": "Español"
+	"language": {
+		"Select": "Seleccionar idioma",
+		"languages": {
+			"en": { "Name": "Inglés" },
+			"es": { "Name": "Español" }
+		}
+	},
+	"theme": {
+		"switcher": {
+			"light": "Cambiar a modo claro",
+			"dark": "Cambiar a modo oscuro"
 		}
 	}
 }
