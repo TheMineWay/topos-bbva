@@ -3,6 +3,7 @@ import { useScore } from "./use-score";
 import { useGameTimer } from "./use-game-timer";
 import type { Hole } from "../types/hole.type";
 import { GAME_CONSTANTS } from "../constants/game.constants";
+import { randomizeHoles } from "../lib/randomize-holes.util";
 
 type Options = {
 	initialSize?: number;
@@ -17,6 +18,12 @@ export const useBoard = ({
 	initialTimerDelay,
 }: Options = {}) => {
 	const scoreManager = useScore();
+
+	// #region Board
+
+	const [size, setSize] = useState(initialSize);
+
+	// #endregion
 
 	// #region Moles
 
@@ -40,13 +47,7 @@ export const useBoard = ({
 		[deleteMoleAt, holes, scoreManager],
 	);
 
-	const randomizeMoles = useCallback(() => {}, []);
-
-	// #endregion
-
-	// #region Board
-
-	const [size, setSize] = useState(initialSize);
+	const nextHoles = useCallback(() => setHoles(randomizeHoles(size)), [size]);
 
 	// #endregion
 
@@ -62,7 +63,7 @@ export const useBoard = ({
 	// #region Timer
 
 	const [timerTickDelay, setTimerTickDelay] = useState(initialTimerDelay);
-	useGameTimer({ tickDelay: timerTickDelay });
+	useGameTimer({ tickDelay: timerTickDelay, onTick: nextHoles });
 
 	// #endregion
 
