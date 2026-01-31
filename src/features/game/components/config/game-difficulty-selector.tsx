@@ -38,5 +38,7 @@ export const GameDifficultySelector: FC = () => {
 		[setConfig],
 	);
 
-	return <Select data={options} value={difficulty} onChange={onSelect} />;
+	return (
+		<Select w="10rem" data={options} value={difficulty} onChange={onSelect} />
+	);
 };
