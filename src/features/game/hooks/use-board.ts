@@ -40,6 +40,8 @@ export const useBoard = ({
 		[deleteMoleAt, holes, scoreManager],
 	);
 
+	const randomizeMoles = useCallback(() => {}, []);
+
 	// #endregion
 
 	// #region Board
