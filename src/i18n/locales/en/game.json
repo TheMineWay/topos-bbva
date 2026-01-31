@@ -9,5 +9,8 @@
 	"score": {
 		"Points": "{{score}} points",
 		"New-record": "New record!"
+	},
+	"layout": {
+		"Greeting": "Hi {{name}}!"
 	}
 }
