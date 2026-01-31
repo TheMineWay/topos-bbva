@@ -13,4 +13,20 @@
 	"layout": {
 		"Greeting": "¡Hola {{name}}!"
 	}
+,
+	"config": {
+		"difficulty": {
+			"options": {
+				"easy": "Fácil",
+				"medium": "Medio",
+				"hard": "Difícil"
+			}
+		},
+		"moles-amount": {
+			"actions": {
+				"Increase": "Aumentar cantidad de topos",
+				"Decrease": "Disminuir cantidad de topos"
+			}
+		}
+	}
 }
