@@ -5,5 +5,8 @@
 	},
 	"assets": {
 		"Mole": "Mole"
+	},
+	"score": {
+		"Points": "{{score}} points"
 	}
 }
