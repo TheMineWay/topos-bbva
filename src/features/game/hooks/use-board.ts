@@ -4,6 +4,7 @@ import { useGameTimer } from "./use-game-timer";
 import type { Hole } from "../types/hole.type";
 import { GAME_CONSTANTS } from "../constants/game.constants";
 import { randomizeHoles } from "../lib/randomize-holes.util";
+import { useUser } from "../../../providers/user/use-user";
 
 type Options = {
 	initialSize?: number;
@@ -17,7 +18,9 @@ export const useBoard = ({
 	initialSize = 9,
 	initialTimerDelay,
 }: Options = {}) => {
-	const scoreManager = useScore();
+	const { user } = useUser();
+
+	const scoreManager = useScore({ username: user.username });
 
 	// #region Board
 
