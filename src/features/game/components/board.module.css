@@ -5,7 +5,7 @@
 }
 
 .board .hole {
-	min-width: max(min(25vw, 8rem), 2.5rem);
+	width: max(min(25vw, 12rem), 2.5rem);
 	aspect-ratio: 1 / 1;
 	border: 1px solid var(--mantine-color-bright);
 

@@ -19,7 +19,14 @@ export const useBoard = ({
 
 	// #region Moles
 
-	const [moles, setMoles] = useState<Hole[]>([]);
+	const [moles, setMoles] = useState<Hole[]>([
+		{
+			mole: {
+				points: 1,
+			},
+			number: 0,
+		},
+	]);
 
 	// #endregion
 

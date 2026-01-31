@@ -1,1 +1,9 @@
-{}
+{
+	"actions": {
+		"Play": "Play",
+		"Stop": "Stop"
+	},
+	"assets": {
+		"Mole": "Mole"
+	}
+}

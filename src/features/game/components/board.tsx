@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import type { UseBoard } from "../hooks/use-board";
 import styles from "./board.module.css";
 import type { Mole } from "../types/mole.type";
-import { MoleRender } from "./mole-render";
+import { MoleRender } from "./mole/mole-render";
 
 type Props = {
 	manager: UseBoard;
