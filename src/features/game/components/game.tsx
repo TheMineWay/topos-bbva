@@ -10,10 +10,15 @@ import {
 	IconPlayerStopFilled,
 } from "@tabler/icons-react";
 import { Score } from "../../../common/score/components/score";
+import { useMolesCount } from "../hooks/use-moles-count";
+import { MolesAmountSelector } from "./config/moles-amount-selector";
 
 export const Game: FC = () => {
 	const { t } = useTranslation(TRANSLATIONS.GAME);
-	const manager = useBoard();
+
+	const molesAmountManager = useMolesCount();
+
+	const manager = useBoard({ molesCount: molesAmountManager.molesCount });
 
 	const onActionClick = useCallback(() => {
 		if (manager.isPlaying) manager.stop();
@@ -26,8 +31,9 @@ export const Game: FC = () => {
 
 			<Board manager={manager} />
 
+			{/* Actions */}
 			<Button
-				size="xl"
+				size="lg"
 				onClick={onActionClick}
 				className={styles["action-button"]}
 				data-testid={manager.isPlaying ? "stop-button" : "play-button"}
@@ -41,6 +47,7 @@ export const Game: FC = () => {
 			>
 				{t(`actions.${manager.isPlaying ? "Stop" : "Play"}`)}
 			</Button>
+			<MolesAmountSelector manager={molesAmountManager} />
 		</div>
 	);
 };

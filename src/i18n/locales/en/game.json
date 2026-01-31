@@ -20,6 +20,12 @@
 				"medium": "Medium",
 				"hard": "Hard"
 			}
+		},
+		"moles-amount": {
+			"actions": {
+				"Increase": "Increase moles amount",
+				"Decrease": "Decrease moles amount"
+			}
 		}
 	}
 }
