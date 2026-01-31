@@ -12,7 +12,7 @@ type Scenario = {
 };
 
 const DEF_MOLE: Mole = {
-	points: 1,
+	multiplier: 1,
 };
 
 const SCENARIOS: Scenario[] = [

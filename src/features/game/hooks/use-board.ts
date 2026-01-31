@@ -22,7 +22,15 @@ export const useBoard = ({ initialSize = 9, molesCount = 1 }: Options = {}) => {
 		config: { difficulty },
 	} = useGameConfig();
 
-	const scoreManager = useScore({ username: user.username });
+	const currentDifficulty = useMemo(
+		() => GAME_DIFFICULTY_CONFIG[difficulty],
+		[difficulty],
+	);
+
+	const scoreManager = useScore({
+		username: user.username,
+		points: currentDifficulty.points,
+	});
 
 	// #region Board
 
@@ -46,7 +54,7 @@ export const useBoard = ({ initialSize = 9, molesCount = 1 }: Options = {}) => {
 			if (!hole) return;
 
 			navigator?.vibrate?.(GAME_CONSTANTS.vibrationIntensity);
-			scoreManager.increment(hole.mole.points);
+			scoreManager.increment(hole.mole.multiplier);
 			deleteMoleAt(idx);
 		},
 		[deleteMoleAt, holes, scoreManager],
@@ -84,13 +92,8 @@ export const useBoard = ({ initialSize = 9, molesCount = 1 }: Options = {}) => {
 
 	// #region Timer
 
-	const timerTickDelay = useMemo(
-		() => GAME_DIFFICULTY_CONFIG[difficulty].ms,
-		[difficulty],
-	);
-
 	useGameTimer({
-		tickDelay: timerTickDelay,
+		tickDelay: currentDifficulty.ms,
 		onTick: nextHoles,
 		enabled: isPlaying,
 	});

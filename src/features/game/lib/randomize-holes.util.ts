@@ -53,6 +53,6 @@ export const randomizeHoles = (
 const constructHole = (number: number): Hole => ({
 	number,
 	mole: {
-		points: 1,
+		multiplier: 1,
 	},
 });

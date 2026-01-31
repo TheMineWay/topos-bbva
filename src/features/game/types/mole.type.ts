@@ -1,3 +1,3 @@
 export type Mole = {
-	points: number;
+	multiplier: number;
 };
