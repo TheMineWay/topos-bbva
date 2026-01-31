@@ -1,26 +1,26 @@
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useScore } from "./use-score";
 import { useGameTimer } from "./use-game-timer";
 import type { Hole } from "../types/hole.type";
 import { GAME_CONSTANTS } from "../constants/game.constants";
 import { randomizeHoles } from "../lib/randomize-holes.util";
 import { useUser } from "../../../providers/user/use-user";
+import { useGameConfig } from "../../../providers/game/use-game-config";
+import { GAME_DIFFICULTY_CONFIG } from "../constants/game-difficulty-config.constant";
 
 type Options = {
 	initialSize?: number;
-	initialTimerDelay?: number;
 	molesCount?: number;
 };
 
 /**
  * Hook responsible of managing board and game logics
  */
-export const useBoard = ({
-	initialSize = 9,
-	initialTimerDelay,
-	molesCount = 1,
-}: Options = {}) => {
+export const useBoard = ({ initialSize = 9, molesCount = 1 }: Options = {}) => {
 	const { user } = useUser();
+	const {
+		config: { difficulty },
+	} = useGameConfig();
 
 	const scoreManager = useScore({ username: user.username });
 
@@ -84,7 +84,11 @@ export const useBoard = ({
 
 	// #region Timer
 
-	const [timerTickDelay, setTimerTickDelay] = useState(initialTimerDelay);
+	const timerTickDelay = useMemo(
+		() => GAME_DIFFICULTY_CONFIG[difficulty].ms,
+		[difficulty],
+	);
+
 	useGameTimer({
 		tickDelay: timerTickDelay,
 		onTick: nextHoles,
@@ -105,10 +109,6 @@ export const useBoard = ({
 		isPlaying,
 		play,
 		stop,
-
-		// Timer API
-		timerTickDelay,
-		setTimerTickDelay,
 
 		// Moles API
 		holes,
