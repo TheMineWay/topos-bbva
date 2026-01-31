@@ -9,26 +9,26 @@ type Options = {
 };
 
 export const useGameTimer = ({ tickDelay = 1000, onTick }: Options = {}) => {
-	const [targetTime, setTargetTime] = useState<Date>(
-		addMilliseconds(new Date(), tickDelay),
-	);
+	const [lastCountStart, setLastCountStart] = useState<Date>(new Date());
 
 	useEffect(() => {
 		const unsubscribe = setInterval(() => {
 			const now = new Date();
+			const targetTime = addMilliseconds(lastCountStart, tickDelay);
 			if (isAfter(now, targetTime)) {
 				onTick?.();
-				setTargetTime(addMilliseconds(now, tickDelay));
+				setLastCountStart(now);
 			}
 		}, INTERVAL);
 		return () => clearInterval(unsubscribe);
-	}, [onTick, tickDelay, targetTime]);
+	}, [onTick, lastCountStart, tickDelay]);
 };
 
 /**
  * DEV NOTE
  *
  * Could not create an interval of "tickDelay". That created a bug. As the useEffect was recalculated, it was like the
- * timer was reseted.
- * I decided to store the target time and check every X time (INTERVAL).
+ * timer was reset.
+ * I decided to store the last time when the timer started. Then I check every X ms (INTERVAL) if we reached the target time.
+ * This approach allows me to update the tickDelay dynamically without losing time.
  */
