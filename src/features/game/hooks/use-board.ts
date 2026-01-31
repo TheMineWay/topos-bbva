@@ -67,13 +67,13 @@ export const useBoard = ({
 	const play = useCallback(() => {
 		setIsPlaying(true);
 		nextHoles();
-	}, [nextHoles]);
+		scoreManager.reset();
+	}, [nextHoles, scoreManager]);
 
 	const stop = useCallback(() => {
 		setIsPlaying(false);
 		setHoles([]);
-		scoreManager.reset();
-	}, [scoreManager]);
+	}, []);
 
 	// #endregion
 
