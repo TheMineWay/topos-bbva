@@ -1,10 +1,25 @@
 {
-	"languages": {
-		"en": {
-			"Name": "Inglés"
-		},
-		"es": {
-			"Name": "Español"
+	"language": {
+		"Select": "Seleccionar idioma",
+		"languages": {
+			"en": { "Name": "Inglés" },
+			"es": { "Name": "Español" }
+		}
+	},
+	"theme": {
+		"switcher": {
+			"light": "Cambiar a modo claro",
+			"dark": "Cambiar a modo oscuro"
+		}
+	},
+	"best-score": {
+		"Title": "Mejor puntuación",
+		"No-score": "Aún no hay mejor puntuación. ¡Empieza a jugar para establecer un récord!",
+		"Score": "{{name}} tiene {{score}} como la mejor puntuación."
+	},
+	"session": {
+		"actions": {
+			"Logout": "Salir"
 		}
 	}
 }

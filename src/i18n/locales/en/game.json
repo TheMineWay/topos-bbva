@@ -1,1 +1,32 @@
-{}
+{
+	"actions": {
+		"Play": "Play",
+		"Stop": "Stop"
+	},
+	"assets": {
+		"Mole": "Mole"
+	},
+	"score": {
+		"Points": "{{score}} points",
+		"New-record": "New record!"
+	},
+	"layout": {
+		"Greeting": "Hi {{name}}!"
+	},
+	"config": {
+		"difficulty": {
+			"options": {
+				"easy": "Easy",
+				"medium": "Medium",
+				"hard": "Hard"
+			},
+			"Select": "Select difficulty"
+		},
+		"moles-amount": {
+			"actions": {
+				"Increase": "Increase moles amount",
+				"Decrease": "Decrease moles amount"
+			}
+		}
+	}
+}

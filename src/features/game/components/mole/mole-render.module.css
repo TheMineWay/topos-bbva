@@ -1,0 +1,10 @@
+.mole {
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+
+	img {
+		width: 75%;
+	}
+}

@@ -1,12 +1,22 @@
 import { useSessionRedirect } from "../../common/session/hooks/use-session-redirect";
 import { createLazyFileRoute } from "@tanstack/react-router";
+import { Game } from "../../features/game/components/game";
+import { GameLayout } from "../../layouts/game/game.layout";
 
 export const Route = createLazyFileRoute("/game/")({
 	component: RouteComponent,
 });
 
 function RouteComponent() {
-	useSessionRedirect();
+	const { user } = useSessionRedirect();
 
-	return <div>Hello "/game/"!</div>;
+	if (!user) return null;
+
+	return (
+		<GameLayout>
+			<div className="full-center">
+				<Game />
+			</div>
+		</GameLayout>
+	);
 }

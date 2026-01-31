@@ -1,1 +1,32 @@
-{}
+{
+	"actions": {
+		"Play": "Jugar",
+		"Stop": "Detener"
+	},
+	"assets": {
+		"Mole": "Topo"
+	},
+	"score": {
+		"Points": "{{score}} puntos",
+		"New-record": "¡Mejor puntuación!"
+	},
+	"layout": {
+		"Greeting": "¡Hola {{name}}!"
+	},
+	"config": {
+		"difficulty": {
+			"options": {
+				"easy": "Fácil",
+				"medium": "Medio",
+				"hard": "Difícil"
+			},
+			"Select": "Seleccionar dificultad"
+		},
+		"moles-amount": {
+			"actions": {
+				"Increase": "Aumentar cantidad de topos",
+				"Decrease": "Disminuir cantidad de topos"
+			}
+		}
+	}
+}

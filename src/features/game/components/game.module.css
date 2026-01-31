@@ -1,0 +1,10 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+.action-button {
+	width: 100%;
+}

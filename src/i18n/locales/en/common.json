@@ -15,5 +15,15 @@
 			"light": "Switch to light mode",
 			"dark": "Switch to dark mode"
 		}
+	},
+	"best-score": {
+		"Title": "Best score",
+		"No-score": "No best score yet. Start playing to set a record!",
+		"Score": "{{name}} has {{score}} as the best score."
+	},
+	"session": {
+		"actions": {
+			"Logout": "Logout"
+		}
 	}
 }

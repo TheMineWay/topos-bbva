@@ -1,0 +1,26 @@
+:root {
+	--min-size: 25vw;
+}
+
+@media (orientation: landscape) {
+	:root {
+		--min-size: 15lvh;
+	}
+}
+
+.board {
+	display: grid;
+	gap: 0.75rem;
+	grid-template-columns: repeat(3, minmax(2rem, 1fr));
+}
+
+.board .hole {
+	width: max(min(var(--min-size), 12rem), 2.5rem);
+	aspect-ratio: 1 / 1;
+	border: 1px solid var(--mantine-color-bright);
+
+	/* Center Mole */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

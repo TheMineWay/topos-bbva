@@ -14,7 +14,9 @@ export const ThemeProvider: FC<Props> = ({ children }) => {
 	const [theme, setTheme] = useState<ThemeInfo>(DEFAULT_THEME);
 
 	const context = useMemo(() => ({ theme, setTheme }), [theme]);
-	const mantineTheme = createTheme({});
+	const mantineTheme = createTheme({
+		primaryShade: 8,
+	});
 
 	return (
 		<ThemeContext.Provider value={context}>

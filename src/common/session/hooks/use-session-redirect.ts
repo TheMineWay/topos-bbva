@@ -17,4 +17,8 @@ export const useSessionRedirect = () => {
 			navigate({ to: target });
 		}
 	}, [user, navigate, location.pathname]);
+
+	return {
+		user,
+	};
 };
