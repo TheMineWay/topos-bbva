@@ -19,14 +19,24 @@ export const useBoard = ({
 
 	// #region Moles
 
-	const [moles, setMoles] = useState<Hole[]>([
-		{
-			mole: {
-				points: 1,
-			},
-			number: 0,
+	const [holes, setHoles] = useState<Hole[]>([]);
+
+	const deleteMoleAt = useCallback((idx: number) => {
+		setHoles((currentMoles) =>
+			currentMoles.filter((hole) => hole.number !== idx),
+		);
+	}, []);
+
+	const hitMoleAt = useCallback(
+		(idx: number) => {
+			const hole = holes.find((hole) => hole.number === idx);
+			if (!hole) return;
+
+			scoreManager.increment(hole.mole.points);
+			deleteMoleAt(idx);
 		},
-	]);
+		[deleteMoleAt, holes, scoreManager],
+	);
 
 	// #endregion
 
@@ -70,8 +80,9 @@ export const useBoard = ({
 		setTimerTickDelay,
 
 		// Moles API
-		moles,
-		setMoles,
+		holes,
+		setHoles,
+		hitMoleAt,
 	};
 };
 

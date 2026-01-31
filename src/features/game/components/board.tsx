@@ -9,17 +9,17 @@ type Props = {
 };
 
 export const Board: FC<Props> = ({ manager }) => {
-	const { size, moles } = manager;
+	const { size, holes } = manager;
 
 	const matrix = useMemo(
 		() =>
 			Array.from({ length: size }).map((_, number) => {
 				return {
 					number,
-					hole: moles.find((_, index) => index === number),
+					hole: holes.find((hole) => hole.number === number),
 				};
 			}),
-		[size, moles],
+		[size, holes],
 	);
 
 	return (
