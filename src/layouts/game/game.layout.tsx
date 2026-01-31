@@ -13,6 +13,8 @@ type Props = {
 
 export const GameLayout: FC<Props> = ({ children }) => {
 	const { t } = useTranslation(TRANSLATIONS.GAME);
+	const { t: tCommon } = useTranslation(TRANSLATIONS.COMMON);
+
 	const { user, setUser } = useUser();
 
 	const onLogout = useCallback(() => setUser(null), [setUser]);
@@ -25,6 +27,7 @@ export const GameLayout: FC<Props> = ({ children }) => {
 						variant="transparent"
 						onClick={onLogout}
 						data-testid="logout-button"
+						aria-label={tCommon("session.actions.Logout")}
 					>
 						<IconLogout2 />
 					</ActionIcon>

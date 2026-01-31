@@ -16,5 +16,10 @@
 		"Title": "Mejor puntuación",
 		"No-score": "Aún no hay mejor puntuación. ¡Empieza a jugar para establecer un récord!",
 		"Score": "{{name}} tiene {{score}} como la mejor puntuación."
+	},
+	"session": {
+		"actions": {
+			"Logout": "Salir"
+		}
 	}
 }
