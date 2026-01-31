@@ -1,3 +1,13 @@
+:root {
+	--min-size: 25vw;
+}
+
+@media (orientation: landscape) {
+	:root {
+		--min-size: 15lvh;
+	}
+}
+
 .board {
 	display: grid;
 	gap: 0.75rem;
@@ -5,7 +15,7 @@
 }
 
 .board .hole {
-	width: max(min(25vw, 12rem), 2.5rem);
+	width: max(min(var(--min-size), 12rem), 2.5rem);
 	aspect-ratio: 1 / 1;
 	border: 1px solid var(--mantine-color-bright);
 
