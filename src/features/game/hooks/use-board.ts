@@ -47,7 +47,16 @@ export const useBoard = ({
 		[deleteMoleAt, holes, scoreManager],
 	);
 
-	const nextHoles = useCallback(() => setHoles(randomizeHoles(size)), [size]);
+	const nextHoles = useCallback(
+		() =>
+			setHoles(
+				randomizeHoles(size, {
+					amount: 3,
+					avoid: holes.map((hole) => hole.number),
+				}),
+			),
+		[size, holes],
+	);
 
 	// #endregion
 
