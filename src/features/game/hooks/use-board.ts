@@ -9,6 +9,7 @@ import { useUser } from "../../../providers/user/use-user";
 type Options = {
 	initialSize?: number;
 	initialTimerDelay?: number;
+	molesCount?: number;
 };
 
 /**
@@ -17,6 +18,7 @@ type Options = {
 export const useBoard = ({
 	initialSize = 9,
 	initialTimerDelay,
+	molesCount = 1,
 }: Options = {}) => {
 	const { user } = useUser();
 
@@ -54,11 +56,11 @@ export const useBoard = ({
 		() =>
 			setHoles(
 				randomizeHoles(size, {
-					amount: 3,
+					amount: molesCount,
 					avoid: holes.map((hole) => hole.number),
 				}),
 			),
-		[size, holes],
+		[size, holes, molesCount],
 	);
 
 	// #endregion

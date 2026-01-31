@@ -6,6 +6,10 @@ import { TRANSLATIONS } from "../../../i18n/translation.enum";
 import { useCallback } from "react";
 import styles from "./game.module.css";
 import { Score } from "./score/score";
+import {
+	IconPlayerPlayFilled,
+	IconPlayerStopFilled,
+} from "@tabler/icons-react";
 
 export const Game: FC = () => {
 	const { t } = useTranslation(TRANSLATIONS.GAME);
@@ -27,6 +31,13 @@ export const Game: FC = () => {
 				onClick={onActionClick}
 				className={styles["action-button"]}
 				data-testid={manager.isPlaying ? "stop-button" : "play-button"}
+				leftSection={
+					manager.isPlaying ? (
+						<IconPlayerStopFilled />
+					) : (
+						<IconPlayerPlayFilled />
+					)
+				}
 			>
 				{t(`actions.${manager.isPlaying ? "Stop" : "Play"}`)}
 			</Button>
