@@ -25,7 +25,12 @@ export const Board: FC<Props> = ({ manager }) => {
 	return (
 		<div className={styles.board}>
 			{matrix.map(({ number, hole }) => (
-				<HoleRender key={number} number={number} mole={hole?.mole} />
+				<HoleRender
+					key={number}
+					number={number}
+					mole={hole?.mole}
+					onHit={() => manager.hitMoleAt(number)}
+				/>
 			))}
 		</div>
 	);
