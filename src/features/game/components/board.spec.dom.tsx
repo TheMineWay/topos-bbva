@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { cleanup, render } from "vitest-browser-react";
 import { TestEssentials } from "../../../test/components/test-essentials";
 import { Board } from "./board";
