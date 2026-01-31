@@ -11,7 +11,12 @@ export const MoleRender: FC<Props> = ({ onHit }) => {
 	const { t } = useTranslation(TRANSLATIONS.GAME);
 
 	return (
-		<button onClick={() => onHit?.()} type="button" className={styles.mole}>
+		<button
+			onClick={() => onHit?.()}
+			type="button"
+			className={styles.mole}
+			data-testid="mole"
+		>
 			<img src={mole} alt={t("assets.Mole")} />
 		</button>
 	);

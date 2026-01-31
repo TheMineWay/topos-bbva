@@ -16,7 +16,9 @@ export const Score: FC<Props> = ({ manager }) => {
 			size="xs"
 			disabled={!manager.isBestScore}
 		>
-			<Title>{t("score.Points", { score: manager.score })}</Title>
+			<Title data-testid="score">
+				{t("score.Points", { score: manager.score })}
+			</Title>
 		</Indicator>
 	);
 };
