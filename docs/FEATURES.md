@@ -13,6 +13,11 @@ As extra features, the gameplay includes:
 - Device vibration on mole hit: if your device supports it, it will vibrate when a mole is hit.
 - Records: the game stores your best score so you always know your record.
 
+What can be done:
+
+- More than 5 moles: I limited the amount of moles to 5 for gameplay reasons, but it can be easily increased by just changing a simple number.
+- Bigger board: the board manager can handle boards of any size, it also can be increased by changing the size number. All logics will adapt to the new size.
+
 ## Accessibility
 
 For me, it is important to make every project accessible to as many people as possible. To accomplish that, I seriously consider following best a11y practices and guidelines.
