@@ -22,3 +22,9 @@ form {
 	flex-direction: column;
 	gap: 1rem;
 }
+
+input,
+textarea,
+select {
+	font-size: 16px !important;
+}
