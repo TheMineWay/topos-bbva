@@ -74,3 +74,4 @@ You have some additional documentations about the project:
 - [Technologies](./docs/TECHNOLOGIES.md)
 - [Tests](./docs/TESTING.md)
 - [Architecture](./docs/ARCHITECTURE.md)
+- [Features](./docs/FEATURES.md)
