@@ -8,5 +8,5 @@ type Props = Omit<ImgHTMLAttributes<HTMLImageElement>, "alt" | "src">;
 export const MoleAvatar: FC<Props> = (props) => {
 	const { t } = useTranslation(TRANSLATIONS.GAME);
 
-	return <img src={mole} alt={t("assets.Mole")} {...props} />;
+	return <img src={mole} alt={t("assets.Mole")} draggable={false} {...props} />;
 };
