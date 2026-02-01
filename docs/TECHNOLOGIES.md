@@ -39,3 +39,7 @@ Also, I love the UI mode.
 
 It gives me a great dev experience and is very easy to use. Also, it has great documentation.
 It also has a UI mode that allows me to interact and see tests.
+
+## BiomeJS
+
+I like it better that the common linting tools. It is very easy to setup and performs very well.
