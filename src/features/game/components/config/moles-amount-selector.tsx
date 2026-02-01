@@ -1,10 +1,10 @@
 import { ActionIcon, Group } from "@mantine/core";
 import type { UseMolesCount } from "../../hooks/use-moles-count";
 import { IconMinus, IconPlus } from "@tabler/icons-react";
-import mole from "../../../../assets/game/mole.png";
 import styles from "./moles-amount-selector.module.css";
 import { useTranslation } from "react-i18next";
 import { TRANSLATIONS } from "../../../../i18n/translation.enum";
+import { MoleAvatar } from "../../../../common/mole/components/mole-avatar";
 
 type Props = {
 	manager: UseMolesCount;
@@ -24,7 +24,7 @@ export const MolesAmountSelector: FC<Props> = ({ manager }) => {
 			>
 				<IconPlus />
 			</ActionIcon>
-			<img src={mole} className={styles.icon} alt={t("assets.Mole")} />
+			<MoleAvatar className={styles.icon} />
 			<ActionIcon
 				size="lg"
 				disabled={!canDecrease}
