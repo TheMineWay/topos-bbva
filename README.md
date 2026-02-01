@@ -33,11 +33,31 @@ pnpm dev
 
 As some tests are run in a browser environment, you need to install the required browsers before running them.
 
-### 1. Install browser dependencies
+### 1. Install playwright dependencies
 
-TODO: Identify browser install commands
+If you don't have it, you will need to install the playwright package and dependencies using the following commands:
 
-### 2. Run tests
+```bash
+pnpm exec playwright install
+pnpm exec playwright install-deps
+```
+
+Depending on your operating system, you might need to install some additional dependencies.
+Even though the CLI will tell you the command, here I provide you with the common ones for Ubuntu:
+
+```bash
+apt-get install libevent-2.1-7 libavif13
+```
+
+### 2. Install browsers
+
+Playwright comes with some browsers by default. However, if you want to use some of the following you need to install them:
+
+- Chrome: `pnpm exec playwright install chrome`
+- Microsoft Edge: `pnpm exec playwright install msedge`
+- Firefox: `pnpm exec playwright install firefox`
+
+### 3. Run tests
 
 | Action | Command |
 |--------|---------|
