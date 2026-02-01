@@ -17,6 +17,8 @@ import { GameConfigProvider } from "./providers/game/game-config.provider";
 const router = createRouter({
 	routeTree,
 	defaultNotFoundComponent: () => <NotFound />,
+	basepath:
+		import.meta.env.VITE_GITHUB_PAGES === "true" ? "/topos-bbva" : undefined,
 });
 
 // Register the router instance for type safety
