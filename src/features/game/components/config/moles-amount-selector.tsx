@@ -24,7 +24,10 @@ export const MolesAmountSelector: FC<Props> = ({ manager }) => {
 			>
 				<IconPlus />
 			</ActionIcon>
-			<MoleAvatar className={styles.icon} />
+			<div className={styles["moles-indicator"]}>
+				<MoleAvatar className={styles.icon} />
+				<small>x{manager.molesCount}</small>
+			</div>
 			<ActionIcon
 				size="lg"
 				disabled={!canDecrease}
