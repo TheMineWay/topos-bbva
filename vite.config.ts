@@ -14,6 +14,7 @@ export default defineConfig(({ mode }) => {
 	const allowedHosts = ENV.VITE_ALLOWED_HOSTS?.split(",");
 
 	return {
+		base: process.env.GITHUB_PAGES === 'true' ? "/topos-bbva/" : '',
 		plugins: [
 			tanstackRouter({
 				target: "react",
