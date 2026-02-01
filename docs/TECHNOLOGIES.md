@@ -18,6 +18,14 @@ I love using TS as it gives me the power of JS (my main language) and the safety
 
 It allows me to easily setup a React project and has great performance. Also, it integrates very well with my testing library (no spoilers yet about tests).
 
+## Zod
+
+I use it to parse locally stored data. It is very easy to use and has great TS integration. Also, it can be integrated with my forms library.
+
+## React Hook Form
+
+It simply handles forms for me so I don't need to reinvent the wheel.
+
 ## Mantine UI
 
 It is my favorite UI library. Maybe it is too big for this project, but I trust the tree-shaking process to reduce the bundle size.
