@@ -59,6 +59,8 @@ Playwright comes with some browsers by default. However, if you want to use some
 
 ### 3. Run tests
 
+Before running e2e tests, make sure to have the development server running (`pnpm dev`).
+
 | Action | Command |
 |--------|---------|
 | Unit tests   | `pnpm test` |
