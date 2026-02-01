@@ -46,3 +46,11 @@ TODO: Identify browser install commands
 | E2E tests    | `pnpm e2e` |
 | E2E tests in dev mode | `pnpm e2e:dev` |
 | E2E report | `pnpm e2e:report` |
+
+## 📖 Documentations index
+
+You have some additional documentations about the project:
+
+- [Technologies](./docs/TECHNOLOGIES.md)
+- [Tests](./docs/TESTING.md)
+- [Architecture](./docs/ARCHITECTURE.md)
