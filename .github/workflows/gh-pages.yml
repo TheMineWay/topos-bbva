@@ -32,7 +32,7 @@ jobs:
         run: pnpm install
 
       - name: 🔨 Build the app
-        run: GITHUB_PAGES=true pnpm run build
+        run: VITE_GITHUB_PAGES=true pnpm run build
 
       - name: 🔄 Upload artifact
         uses: actions/upload-pages-artifact@v3
