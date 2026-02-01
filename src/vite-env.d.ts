@@ -2,7 +2,7 @@
 
 interface ImportMetaEnv {
 	readonly VITE_ALLOWED_HOSTS: string;
-	// add more env variables here
+	readonly GITHUB_PAGES: string;
 }
 
 interface ImportMeta {
