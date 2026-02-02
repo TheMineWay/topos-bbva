@@ -1,5 +1,10 @@
 {
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "biomejs.biome",
-	"typescript.preferences.importModuleSpecifier": "relative"
+	"typescript.preferences.importModuleSpecifier": "relative",
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.patterns": {
+		"*.ts": "${capture}.spec.ts, ${capture}.spec.dom.ts",
+		"*.tsx": "${capture}.spec.tsx, ${capture}.spec.dom.tsx"
+	}
 }

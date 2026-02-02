@@ -21,18 +21,20 @@ export const MolesAmountSelector: FC<Props> = ({ manager }) => {
 				disabled={!canIncrease}
 				onClick={increase}
 				aria-label={t("config.moles-amount.actions.Increase")}
+				data-testid="increase-moles-button"
 			>
 				<IconPlus />
 			</ActionIcon>
 			<div className={styles["moles-indicator"]}>
 				<MoleAvatar className={styles.icon} />
-				<small>x{manager.molesCount}</small>
+				<small data-testid="moles-count-display">x{manager.molesCount}</small>
 			</div>
 			<ActionIcon
 				size="lg"
 				disabled={!canDecrease}
 				onClick={decrease}
 				aria-label={t("config.moles-amount.actions.Decrease")}
+				data-testid="decrease-moles-button"
 			>
 				<IconMinus />
 			</ActionIcon>

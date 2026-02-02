@@ -10,6 +10,7 @@ export default defineConfig((configEnv) =>
 			reporters: process.env.GITHUB_ACTIONS
 				? ["dot", "github-actions"]
 				: ["dot"],
+			setupFiles: ["./vitest.setup.ts"],
 			projects: [
 				// Unit tests
 				{
