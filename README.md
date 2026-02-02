@@ -77,3 +77,6 @@ You have some additional documentations about the project:
 - [Tests](./docs/TESTING.md)
 - [Architecture](./docs/ARCHITECTURE.md)
 - [Features](./docs/FEATURES.md)
+
+> [!NOTE]
+> Initially, the app was meant to be deployed on GH pages. As it caused lots of errors with the web being an SPA I decided to redeploy it on Vercel. The GH pages deployment is still active and it is maintained, but it can fail sometimes.
