@@ -46,6 +46,7 @@ export const GameDifficultySelector: FC = () => {
 			value={difficulty}
 			onChange={onSelect}
 			aria-label={t("config.difficulty.Select")}
+			data-testid="game-difficulty-selector"
 		/>
 	);
 };

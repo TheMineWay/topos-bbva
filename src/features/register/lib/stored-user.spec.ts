@@ -1,25 +1,9 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { getStoredUser } from "./stored-user";
 import type { UserInfo } from "providers/user/user.context";
+import { createLocalStorageMock } from "../../../test/lib/create-ls-mock";
 
-const localStorageMock = (() => {
-	let store: Record<string, string> = {};
-
-	return {
-		getItem: (key: string) => {
-			return store[key] ?? null;
-		},
-		setItem: (key: string, value: string) => {
-			store[key] = value.toString();
-		},
-		removeItem: (key: string) => {
-			delete store[key];
-		},
-		clear: () => {
-			store = {};
-		},
-	};
-})();
+const localStorageMock = createLocalStorageMock();
 
 describe("getStoredUser()", () => {
 	beforeEach(() => {
