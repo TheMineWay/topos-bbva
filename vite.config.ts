@@ -5,6 +5,33 @@ import react from "@vitejs/plugin-react";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import { VitePWA } from "vite-plugin-pwa";
 
+const icons = [
+	{
+		src: "icons/pwa-192x192.png",
+		sizes: "192x192",
+		type: "image/png",
+	},
+	{
+		src: "icons/pwa-512x512.png",
+		sizes: "512x512",
+		type: "image/png",
+	},
+
+	// Maskable icons
+	{
+		src: "icons/pwa-512x512.png",
+		sizes: "512x512",
+		type: "image/png",
+		purpose: "any",
+	},
+	{
+		src: "icons/pwa-512x512.png",
+		sizes: "512x512",
+		type: "image/png",
+		purpose: "maskable",
+	},
+];
+
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
 	// Load env
@@ -32,38 +59,18 @@ export default defineConfig(({ mode }) => {
 				},
 
 				// Custom manifest data
-				includeAssets: ["favicon.ico", "robots.txt", "apple-touch-icon.png"],
+				includeAssets: [
+					"favicon.ico",
+					"robots.txt",
+					"apple-touch-icon.png",
+					...icons.map((icon) => icon.src),
+				],
 				manifest: {
 					name: "Topos BBVA",
 					short_name: "Topos",
 					description: "Juego Topos BBVA",
 					theme_color: "#1212BA",
-					icons: [
-						{
-							src: "icons/pwa-192x192.png",
-							sizes: "192x192",
-							type: "image/png",
-						},
-						{
-							src: "icons/pwa-512x512.png",
-							sizes: "512x512",
-							type: "image/png",
-						},
-
-						// Maskable icons
-						{
-							src: "icons/pwa-512x512.png",
-							sizes: "512x512",
-							type: "image/png",
-							purpose: "any",
-						},
-						{
-							src: "icons/pwa-512x512.png",
-							sizes: "512x512",
-							type: "image/png",
-							purpose: "maskable",
-						},
-					],
+					icons,
 				},
 			}),
 		],
