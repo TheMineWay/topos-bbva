@@ -59,12 +59,7 @@ export default defineConfig(({ mode }) => {
 				},
 
 				// Custom manifest data
-				includeAssets: [
-					"favicon.ico",
-					"robots.txt",
-					"apple-touch-icon.png",
-					...icons.map((icon) => icon.src),
-				],
+				includeAssets: ["favicon.ico", "robots.txt", "apple-touch-icon.png"],
 				manifest: {
 					name: "Topos BBVA",
 					short_name: "Topos",
