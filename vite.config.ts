@@ -40,25 +40,25 @@ export default defineConfig(({ mode }) => {
 					theme_color: "#1212BA",
 					icons: [
 						{
-							src: "icons/pwa-192x192.png",
+							src: "/icons/pwa-192x192.png",
 							sizes: "192x192",
 							type: "image/png",
 						},
 						{
-							src: "icons/pwa-512x512.png",
+							src: "/icons/pwa-512x512.png",
 							sizes: "512x512",
 							type: "image/png",
 						},
 
 						// Maskable icons
 						{
-							src: "icons/pwa-512x512.png",
+							src: "/icons/pwa-512x512.png",
 							sizes: "512x512",
 							type: "image/png",
 							purpose: "any",
 						},
 						{
-							src: "icons/pwa-512x512.png",
+							src: "/icons/pwa-512x512.png",
 							sizes: "512x512",
 							type: "image/png",
 							purpose: "maskable",
